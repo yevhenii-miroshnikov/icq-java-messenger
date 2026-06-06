@@ -1,0 +1,773 @@
+/* =========================================================================
+   CORE DEEP CYBERPUNK THEME PALETTE
+   ========================================================================= */
+
+.root {
+    -fx-background-color: #1E1E2E;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/* --- TEXT LABELS INITIALIZATION --- */
+.label {
+    -fx-text-fill: #A9B1D6;
+}
+
+/* --- STRUCTURAL HEADERS --- */
+.header-label {
+    -fx-text-fill: #89B4FA;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.section-title {
+    -fx-text-fill: #89B4FA;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 10px 0;
+    -fx-border-color: #313244;
+    -fx-border-width: 0 0 1px 0;
+    -fx-max-width: Infinity;
+}
+
+/* =========================================================================
+   LEFT PANEL (ROSTER DIRECTORY)
+   ========================================================================= */
+
+.sidebar-container {
+    -fx-background-color: #181825;
+    -fx-border-color: #313244;
+    -fx-border-width: 0 1px 0 0;
+}
+
+#usersListView {
+    -fx-control-inner-background: #181825;
+}
+
+#usersListView .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #A6ADC8;
+    -fx-padding: 12px 10px;
+    -fx-border-color: #292E42;
+    -fx-border-width: 0 0 1px 0;
+}
+
+#usersListView .list-cell:empty {
+    -fx-border-width: 0;
+}
+
+#usersListView .list-cell:filled:hover {
+    -fx-background-color: #B4BEFE;
+    -fx-text-fill: #11111B;
+    -fx-cursor: hand;
+    -fx-background-radius: 8px;
+    -fx-border-color: transparent;
+}
+
+#usersListView .list-cell:filled:selected,
+#usersListView .list-cell:filled:selected:focused {
+    -fx-background-color: #313244;
+    -fx-border-color: #CBA6F7;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+}
+
+.sidebar-item-label {
+    -fx-text-fill: #CDD6F4;
+    -fx-font-size: 14px;
+}
+
+.sidebar-item-username {
+    -fx-text-fill: #6C7086;
+    -fx-font-size: 11px;
+}
+
+.status-dot-online {
+    -fx-fill: #A6E3A1;
+}
+
+.status-dot-offline {
+    -fx-fill: #F38BA8;
+}
+
+/* =========================================================================
+   RIGHT PANEL (ACTIVE VIEWPORT)
+   ========================================================================= */
+
+.chat-area-container {
+    -fx-background-color: #1E1E2E;
+}
+
+.chat-header {
+    -fx-border-color: #313244;
+    -fx-border-width: 0 0 1px 0;
+    -fx-padding: 0 0 10px 0;
+}
+
+.chat-header-name-label {
+    -fx-text-fill: #89B4FA;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.chat-header-status-label {
+    -fx-font-size: 12px;
+}
+
+.chat-header-status-online {
+    -fx-text-fill: #A6E3A1;
+}
+
+.chat-header-status-offline {
+    -fx-text-fill: #6C7086;
+}
+
+.chat-close-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #6C7086;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 0 10px;
+}
+
+.chat-close-btn:hover {
+    -fx-text-fill: #F38BA8;
+}
+
+#chatListView {
+    -fx-control-inner-background: #1E1E2E;
+}
+
+#chatListView .list-cell,
+#chatListView .list-cell:empty,
+#chatListView .list-cell:filled:hover,
+#chatListView .list-cell:filled:selected,
+#chatListView .list-cell:filled:selected:focused {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 4px 14px;
+}
+
+.start-chat-placeholder {
+    -fx-text-fill: #6C7086;
+    -fx-font-size: 14px;
+    -fx-font-style: italic;
+    -fx-alignment: center;
+}
+
+/* =========================================================================
+   CORE SCROLLBARS INTERFACE RENDERING
+   ========================================================================= */
+
+.list-view {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 10px;
+}
+
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+    -fx-pref-height: 10px;
+}
+
+.scroll-bar:vertical .track,
+.scroll-bar:horizontal .track {
+    -fx-background-color: #181825;
+    -fx-background-radius: 5px;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: #313244;
+    -fx-background-radius: 5px;
+}
+
+.scroll-bar:vertical .thumb:hover,
+.scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: #CBA6F7;
+}
+
+/* Purge standard navigation arrows */
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-shape: " ";
+    -fx-padding: 0;
+}
+
+/* =========================================================================
+   DATA INPUT COMPONENTS & INTERACTIVE CONTROLS
+   ========================================================================= */
+
+.text-field, .password-field {
+    -fx-background-color: #313244;
+    -fx-text-fill: #CDD6F4;
+    -fx-prompt-text-fill: #A6ADC8;
+    -fx-background-radius: 8px;
+    -fx-padding: 10px 14px;
+    -fx-border-width: 1px;
+    -fx-border-color: transparent;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-background-color: #313244;
+    -fx-border-color: #CBA6F7;
+    -fx-border-radius: 8px;
+}
+
+.message-input {
+    -fx-background-color: #313244;
+    -fx-text-fill: #CDD6F4;
+    -fx-prompt-text-fill: #A6ADC8;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-color: transparent;
+    -fx-border-width: 1px;
+    -fx-padding: 0;
+}
+
+/* Enforce internal transparency states to patch layout bugs */
+.message-input .content,
+.message-input .scroll-pane,
+.message-input .scroll-pane .viewport {
+    -fx-background-color: transparent;
+    -fx-control-inner-background: transparent;
+}
+
+.message-input .scroll-pane {
+    -fx-background-radius: 8px;
+    -fx-padding: 0 4px 0 0;
+}
+
+.message-input .content {
+    -fx-background-radius: 8px;
+    -fx-padding: 7px 6px 7px 12px;
+}
+
+.message-input:focused {
+    -fx-border-color: #CBA6F7;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+.message-input:focused .content,
+.message-input:focused .scroll-pane,
+.message-input:focused .scroll-pane .viewport {
+    -fx-background-color: transparent;
+    -fx-control-inner-background: transparent;
+}
+
+.message-input .scroll-bar:horizontal {
+    -fx-max-height: 0;
+    -fx-padding: 0;
+}
+
+.message-input .scroll-bar:vertical {
+    -fx-pref-width: 4px;
+    -fx-background-color: transparent;
+}
+
+.message-input .scroll-bar:vertical .thumb {
+    -fx-background-color: #585b70;
+    -fx-background-radius: 2px;
+}
+
+/* --- BUTTONS SYSTEM --- */
+.button {
+    -fx-background-color: #CBA6F7;
+    -fx-text-fill: #11111B;
+    -fx-background-radius: 8px;
+    -fx-padding: 10px 18px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #B4BEFE;
+}
+
+.button:pressed {
+    -fx-background-color: #89B4FA;
+    -fx-text-fill: white;
+}
+
+.chat-icon-btn {
+    -fx-background-color: #CBA6F7;
+    -fx-text-fill: #11111B;
+    -fx-background-radius: 8px;
+    -fx-font-family: "Segoe UI Symbol", "Segoe UI", sans-serif;
+    -fx-font-weight: normal;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    -fx-padding: 0;
+}
+
+.chat-icon-btn:hover {
+    -fx-background-color: #B4BEFE;
+}
+
+.chat-icon-btn:pressed {
+    -fx-background-color: #89B4FA;
+    -fx-text-fill: white;
+}
+
+/* =========================================================================
+   CHAT MESSAGE BUBBLES LAYOUT ENGINE
+   ========================================================================= */
+
+.system-message {
+    -fx-background-color: rgba(49, 50, 68, 0.4);
+    -fx-text-fill: #A6ADC8;
+    -fx-font-style: italic;
+    -fx-font-size: 12px;
+    -fx-padding: 6px 16px;
+    -fx-background-radius: 20px;
+    -fx-alignment: center;
+}
+
+.typing-indicator {
+    -fx-text-fill: #F38BA8;
+    -fx-font-style: italic;
+    -fx-font-size: 11px;
+}
+
+.chat-bubble-mine {
+    -fx-background-color: #313244;
+    -fx-background-radius: 14px 14px 2px 14px;
+    -fx-padding: 10px 14px;
+    -fx-text-fill: #89B4FA;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+}
+
+.chat-bubble-mine:hover {
+    -fx-background-color: #3f4057;
+}
+
+.chat-bubble-other {
+    -fx-background-color: #181825;
+    -fx-background-radius: 14px 14px 14px 2px;
+    -fx-padding: 10px 14px;
+    -fx-text-fill: #CDD6F4;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+}
+
+.chat-bubble-other:hover {
+    -fx-background-color: #222334;
+}
+
+.chat-message-sender {
+    -fx-text-fill: #CBA6F7;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 2px 4px;
+}
+
+.chat-message-time {
+    -fx-text-fill: #6C7086;
+    -fx-font-size: 10px;
+    -fx-padding: 2px 2px 0 4px;
+}
+
+.chat-message-checks {
+    -fx-text-fill: #A6E3A1;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 2px 4px 0 0;
+}
+
+.file-message {
+    -fx-underline: true;
+}
+
+.date-divider-capsule {
+    -fx-background-color: rgba(24, 24, 37, 0.7);
+    -fx-text-fill: #A6ADC8;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 4px 12px;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 4, 0, 0, 2);
+}
+
+.chat-message-edited-right {
+    -fx-text-fill: #6C7086;
+    -fx-font-size: 9px;
+    -fx-font-style: italic;
+    -fx-padding: 2px 2px 0 0;
+}
+
+.chat-message-edited-left {
+    -fx-text-fill: #6C7086;
+    -fx-font-size: 9px;
+    -fx-font-style: italic;
+    -fx-padding: 2px 0 0 2px;
+}
+
+/* =========================================================================
+   TELEMETRY STATES & MODAL UTILITIES
+   ========================================================================= */
+
+.error-label {
+    -fx-text-fill: #F38BA8;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+}
+
+.info-label {
+    -fx-text-fill: #89B4FA;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.context-menu {
+    -fx-background-color: #181825;
+    -fx-border-color: #313244;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 4px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 10, 0, 0, 4);
+}
+
+.menu-item {
+    -fx-padding: 8px 16px;
+    -fx-background-color: transparent;
+}
+
+.menu-item .label {
+    -fx-text-fill: #CDD6F4;
+    -fx-font-size: 13px;
+}
+
+.menu-item:hover {
+    -fx-background-color: #313244;
+    -fx-background-radius: 4px;
+}
+
+.menu-item:hover .label {
+    -fx-text-fill: #CBA6F7;
+}
+
+.split-pane {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.split-pane > .split-pane-divider {
+    -fx-background-color: #313244;
+    -fx-padding: 0 1px 0 0;
+}
+
+.link-button {
+    -fx-text-fill: #89B4FA;
+    -fx-border-color: transparent;
+    -fx-underline: false;
+}
+
+.link-button:hover {
+    -fx-text-fill: #B4BEFE;
+    -fx-underline: true;
+}
+
+.input-group {
+    -fx-background-color: #313244;
+    -fx-background-radius: 8px;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 1px;
+}
+
+.input-group-focused {
+    -fx-border-color: #CBA6F7;
+    -fx-border-radius: 8px;
+}
+
+.input-prefix {
+    -fx-text-fill: #A6ADC8;
+    -fx-padding: 10px 0 10px 14px;
+    -fx-font-weight: bold;
+}
+
+.text-field-transparent,
+.password-field-transparent {
+    -fx-background-color: transparent;
+    -fx-text-fill: #CDD6F4;
+    -fx-prompt-text-fill: #A6ADC8;
+    -fx-padding: 10px 14px;
+    -fx-border-width: 0;
+}
+
+.text-field-transparent:focused,
+.password-field-transparent:focused {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+.icon-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #A6ADC8;
+    -fx-cursor: hand;
+    -fx-padding: 0 10px 0 5px;
+    -fx-border-color: transparent;
+    -fx-background-insets: 0;
+}
+
+.icon-button:hover {
+    -fx-background-color: transparent;
+    -fx-text-fill: #CBA6F7;
+}
+
+/* =========================================================================
+   LOCAL SIDEBAR USER ACCOUNT CONTAINER
+   ========================================================================= */
+
+.profile-container {
+    -fx-padding: 6px 10px 10px 10px;
+    -fx-border-color: #313244;
+    -fx-border-width: 0 0 1px 0;
+    -fx-cursor: hand;
+    -fx-background-radius: 8px;
+}
+
+.profile-container:hover {
+    -fx-background-color: rgba(203, 166, 247, 0.08);
+}
+
+.profile-name-label {
+    -fx-text-fill: #CDD6F4;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.profile-username-label {
+    -fx-text-fill: #A6ADC8;
+    -fx-font-size: 13px;
+}
+
+.profile-status-label {
+    -fx-text-fill: #A6E3A1;
+    -fx-font-size: 12px;
+}
+
+/* =========================================================================
+   MODAL INTERACTIVE PROFILE CARD VIEWPORT & EXTRACTED CLASSES
+   ========================================================================= */
+
+.profile-card {
+    -fx-background-color: #181825;
+    -fx-border-color: #313244;
+    -fx-border-width: 1px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-padding: 30px;
+    -fx-min-width: 340px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 25, 0, 0, 10);
+}
+
+.profile-card-label {
+    -fx-text-fill: #A6ADC8;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.profile-card-value {
+    -fx-text-fill: #CDD6F4;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 5px 0;
+}
+
+.profile-privacy-placeholder {
+    -fx-text-fill: #F38BA8;
+    -fx-font-style: italic;
+    -fx-font-size: 13px;
+}
+
+.status-value-online {
+    -fx-text-fill: #A6E3A1;
+}
+
+.status-value-offline {
+    -fx-text-fill: #6C7086;
+}
+
+.security-section {
+    -fx-border-color: #313244;
+    -fx-border-width: 1px 0 0 0;
+    -fx-padding: 10px 0 0 0;
+}
+
+/* Explicit compound button sub-class definitions to prevent inheritance shadowing */
+.button.copy-button-small {
+    -fx-padding: 2px 6px;
+    -fx-font-size: 10px;
+    -fx-background-color: #313244;
+    -fx-text-fill: #cdd6f4;
+    -fx-cursor: hand;
+    -fx-translate-y: -2px;
+}
+
+.button.copy-button-medium {
+    -fx-padding: 5px 8px;
+    -fx-font-size: 11px;
+    -fx-background-color: #313244;
+    -fx-text-fill: #cdd6f4;
+    -fx-cursor: hand;
+}
+
+.btn-secondary {
+    -fx-background-color: transparent;
+    -fx-text-fill: #A6ADC8;
+    -fx-border-color: #313244;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #313244;
+    -fx-text-fill: #CDD6F4;
+}
+
+.btn-secondary:pressed {
+    -fx-background-color: #1E1E2E;
+}
+
+/* Explicit scroll-pane bindings configuration */
+.profile-scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.transparent-viewport {
+    -fx-background-color: transparent;
+}
+
+.profile-card .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 6px;
+    -fx-padding: 0 2px 0 0;
+}
+
+.profile-card .scroll-bar:vertical .thumb {
+    -fx-background-color: #585b70;
+    -fx-background-radius: 3px;
+}
+
+.profile-card .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #CBA6F7;
+}
+
+/* =========================================================================
+   EXPERIMENTAL CONTEXT BLUR VIEW SYSTEM & MENUS
+   ========================================================================= */
+
+.blur-overlay {
+    -fx-background-color: rgba(17, 17, 27, 0.65);
+}
+
+.custom-context-menu {
+    -fx-background-color: #181825;
+    -fx-border-color: #313244;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 6px 0px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 15, 0, 0, 8);
+}
+
+.custom-menu-item {
+    -fx-padding: 10px 18px;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.custom-menu-item:hover {
+    -fx-background-color: #313244;
+}
+
+.custom-menu-item-text {
+    -fx-text-fill: #CDD6F4;
+    -fx-font-size: 13px;
+}
+
+.custom-menu-item:hover .custom-menu-item-text {
+    -fx-text-fill: #CBA6F7;
+}
+
+.custom-menu-item-danger .custom-menu-item-text {
+    -fx-text-fill: #F38BA8;
+}
+
+.custom-menu-item-danger:hover {
+    -fx-background-color: rgba(243, 139, 168, 0.15);
+}
+
+.custom-menu-item-danger:hover .custom-menu-item-text {
+    -fx-text-fill: #F38BA8;
+}
+
+.custom-menu-status-container {
+    -fx-padding: 8px 16px;
+    -fx-border-color: #313244;
+    -fx-border-width: 1px 0 0 0;
+}
+
+.custom-menu-status-text {
+    -fx-text-fill: #6C7086;
+    -fx-font-size: 11px;
+    -fx-font-style: italic;
+}
+
+/* --- ACTIVE EDITING HUD PANEL --- */
+.edit-panel-container {
+    -fx-background-color: #181825;
+    -fx-border-color: #CBA6F7;
+    -fx-border-width: 0 0 0 3px;
+    -fx-padding: 6px 14px;
+}
+
+.edit-panel-title {
+    -fx-text-fill: #CBA6F7;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.edit-panel-text {
+    -fx-text-fill: #A6ADC8;
+    -fx-font-size: 12px;
+    -fx-font-style: italic;
+}
+
+.edit-cancel-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #6C7086;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 0 5px;
+}
+
+.edit-cancel-btn:hover {
+    -fx-text-fill: #F38BA8;
+}

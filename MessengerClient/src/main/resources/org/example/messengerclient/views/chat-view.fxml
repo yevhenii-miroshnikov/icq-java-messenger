@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
+
+<StackPane prefHeight="600.0" prefWidth="800.0"
+           xmlns="http://javafx.com/javafx/21"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.example.messengerclient.controllers.ChatController">
+
+    <BorderPane fx:id="mainChatContainer" styleClass="main-chat-container">
+        <center>
+            <SplitPane dividerPositions="0.28" styleClass="split-pane" BorderPane.alignment="CENTER">
+
+                <VBox minWidth="220.0" maxWidth="350.0" spacing="10.0" styleClass="sidebar-container">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+
+                    <VBox spacing="4.0" styleClass="profile-container" onMouseClicked="#onProfileClick">
+                        <HBox alignment="CENTER_LEFT">
+                            <Label fx:id="myNameLabel" text="Loading..." styleClass="profile-name-label"/>
+                            <Region HBox.hgrow="ALWAYS" />
+                            <Label fx:id="myStatusLabel" text="Online" styleClass="profile-status-label"/>
+                        </HBox>
+                        <Label fx:id="myUsernameLabel" text="\@username" styleClass="profile-username-label"/>
+                    </VBox>
+
+                    <TextField fx:id="searchField" promptText="Search users..." styleClass="text-field" />
+
+                    <Label text="My Chats" styleClass="section-title"/>
+                    <ListView fx:id="usersListView" VBox.vgrow="ALWAYS" styleClass="users-list"/>
+                </VBox>
+
+                <VBox spacing="10.0" styleClass="chat-area-container">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+
+                    <HBox alignment="CENTER_LEFT" prefHeight="45.0" styleClass="chat-header">
+                        <VBox alignment="CENTER_LEFT" spacing="1.0" HBox.hgrow="ALWAYS">
+                            <Label fx:id="chatHeaderNameLabel" text="Select a chat to start messaging..." styleClass="chat-header-name-label"/>
+                            <Label fx:id="chatHeaderStatusLabel" text="" styleClass="chat-header-status-label"/>
+                        </VBox>
+                        <Button fx:id="closeChatButton" onAction="#onCloseChatClick" text="✕" styleClass="chat-close-btn" visible="false" managed="false" />
+                    </HBox>
+
+                    <ListView fx:id="chatListView" VBox.vgrow="ALWAYS" styleClass="chat-list-view" />
+
+                    <Label fx:id="typingLabel" text="" styleClass="typing-indicator"/>
+
+                    <HBox fx:id="editPanel" alignment="CENTER_LEFT" spacing="15.0" styleClass="edit-panel-container" visible="false" managed="false">
+                        <VBox spacing="2.0" HBox.hgrow="ALWAYS">
+                            <Label text="Editing message" styleClass="edit-panel-title"/>
+                            <Label fx:id="editMessageLabel" text="" styleClass="edit-panel-text"/>
+                        </VBox>
+                        <Button onAction="#onCancelEditClick" text="✕" styleClass="edit-cancel-btn" />
+                    </HBox>
+
+                    <HBox alignment="CENTER" spacing="10.0" prefHeight="50.0">
+                        <Button onAction="#onSendFileClick" text="📎" styleClass="chat-icon-btn" prefWidth="36.0" prefHeight="36.0" minWidth="36.0" minHeight="36.0"/>
+
+                        <TextArea fx:id="messageField" promptText="Write a message..." HBox.hgrow="ALWAYS" styleClass="message-input" prefHeight="36.0" minHeight="36.0" maxHeight="90.0" wrapText="true"/>
+
+                        <Button fx:id="sendButton" onAction="#onSendButtonClick" text="➜" styleClass="chat-icon-btn" prefWidth="36.0" prefHeight="36.0" minWidth="36.0" minHeight="36.0"/>
+                    </HBox>
+                </VBox>
+
+            </SplitPane>
+        </center>
+    </BorderPane>
+
+    <AnchorPane fx:id="blurOverlay" visible="false" styleClass="blur-overlay" onMouseClicked="#onBlurOverlayClick" />
+
+</StackPane>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="15.0" styleClass="root"
+      xmlns:fx="http://javafx.com/fxml/1"
+      xmlns="http://javafx.com/javafx/21"
+      fx:controller="org.example.messengerclient.controllers.RegisterController">
+
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+    </padding>
+
+    <Label text="Create Account" styleClass="header-label"/>
+
+    <TextField fx:id="nameField" promptText="Your name" styleClass="text-field" maxWidth="250.0"/>
+
+    <HBox styleClass="input-group" maxWidth="250.0" alignment="CENTER_LEFT">
+        <Label text="\@" styleClass="input-prefix"/>
+        <TextField fx:id="usernameField" promptText="Unique username" styleClass="text-field-transparent" HBox.hgrow="ALWAYS"/>
+    </HBox>
+
+    <TextField fx:id="phoneField" promptText="Phone number" styleClass="text-field" maxWidth="250.0"/>
+
+    <HBox styleClass="input-group" maxWidth="250.0" alignment="CENTER_LEFT">
+        <StackPane HBox.hgrow="ALWAYS">
+            <PasswordField fx:id="passwordField" promptText="Password" styleClass="password-field-transparent"/>
+            <TextField fx:id="passwordTextField" promptText="Password" styleClass="text-field-transparent" visible="false"/>
+        </StackPane>
+        <Button text="👁" styleClass="icon-button" onAction="#togglePasswordVisibility" focusTraversable="false"/>
+    </HBox>
+
+    <HBox styleClass="input-group" maxWidth="250.0" alignment="CENTER_LEFT">
+        <StackPane HBox.hgrow="ALWAYS">
+            <PasswordField fx:id="confirmField" promptText="Confirm password" styleClass="password-field-transparent"/>
+            <TextField fx:id="confirmTextField" promptText="Confirm password" styleClass="text-field-transparent" visible="false"/>
+        </StackPane>
+        <Button text="👁" styleClass="icon-button" onAction="#toggleConfirmVisibility" focusTraversable="false"/>
+    </HBox>
+
+    <Button text="Register" onAction="#onRegisterButtonClick" styleClass="button" prefWidth="250.0" defaultButton="true"/>
+
+    <Label fx:id="statusLabel" text="" styleClass="error-label" wrapText="true" maxWidth="250.0" alignment="CENTER"/>
+
+    <Hyperlink text="Already have an account? Login" onAction="#onLoginLinkClick" styleClass="link-button"/>
+
+</VBox>
