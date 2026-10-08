@@ -20,12 +20,35 @@ public class DatabaseManager {
 
     static {
         try {
-            sessionFactory = new Configuration().configure().buildSessionFactory();
-            logger.info("Database connection successfully established!");
+            Configuration configuration = new Configuration().configure();
+
+            String databaseUrl = System.getenv("MESSENGER_DB_URL");
+            if (databaseUrl != null && !databaseUrl.isBlank()) {
+                configuration.setProperty("hibernate.connection.url", databaseUrl);
+            }
+            configuration.setProperty(
+                    "hibernate.connection.username",
+                    requiredEnvironmentVariable("MESSENGER_DB_USERNAME")
+            );
+            configuration.setProperty(
+                    "hibernate.connection.password",
+                    requiredEnvironmentVariable("MESSENGER_DB_PASSWORD")
+            );
+
+            sessionFactory = configuration.buildSessionFactory();
+            logger.info("Hibernate SessionFactory initialized.");
         } catch (Throwable ex) {
             logger.log(Level.SEVERE, "Failed to initialize SessionFactory", ex);
             throw new ExceptionInInitializerError(ex);
         }
+    }
+
+    private static String requiredEnvironmentVariable(String name) {
+        String value = System.getenv(name);
+        if (value == null || value.isBlank()) {
+            throw new IllegalStateException("Required environment variable is not set: " + name);
+        }
+        return value;
     }
 
     // User authentication against stored password hash

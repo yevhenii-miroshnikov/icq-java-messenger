@@ -6,7 +6,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class SecurityUtil {
 
-    // Computes a secure cryptographic hash using the SHA-256 algorithm
+    // Computes a SHA-256 digest of the supplied password.
     public static String hashPassword(String plainPassword) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
