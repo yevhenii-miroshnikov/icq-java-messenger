@@ -129,7 +129,7 @@ public class ClientHandler implements Runnable {
                     closeConnections();
                     return;
                 }
-                // --- 3. SECURE INTERACTIVE ROUTING (Authenticated only) ---
+                // --- 3. AUTHENTICATED REQUEST ROUTING ---
                 else if (isAuthenticated) {
 
                     // Profile updates routing

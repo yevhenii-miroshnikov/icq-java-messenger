@@ -28,4 +28,17 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <mainClass>org.example.ServerMain</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
